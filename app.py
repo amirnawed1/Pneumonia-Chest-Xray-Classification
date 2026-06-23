@@ -146,20 +146,25 @@ if uploaded_file is not None:
             caption="Uploaded Image",
             use_container_width=True
         )
+predict_button = st.button(
+    "🔍 Predict Image",
+    use_container_width=True
+)
 
+if predict_button:
     # -----------------------------
     # Image Preprocessing
     # -----------------------------
 
-    img = image.resize((224,224))
+        img = image.resize((224,224))
 
-    img = np.array(img)
+        img = np.array(img)
 
-    img = img / 255.0
+        img = img / 255.0
 
-    img = np.expand_dims(
-        img,
-        axis=0
+        img = np.expand_dims(
+            img,
+            axis=0
     )
 
     # -----------------------------
