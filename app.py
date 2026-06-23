@@ -210,26 +210,25 @@ if uploaded_file is not None:
 
         )
 
+if uploaded_file is not None:
 
-# -----------------------------
-# Probability Scores
-# -----------------------------
+    normal_prob = prediction[0][0] * 100
 
-normal_prob = prediction[0][0] * 100
+    pneumonia_prob = prediction[0][1] * 100
 
-pneumonia_prob = prediction[0][1] * 100
+    st.subheader("📊 Prediction Probability")
 
-st.subheader("📊 Prediction Probability")
+    chart_data = {
 
-chart_data = {
+        "Normal": normal_prob,
 
-    "Normal": normal_prob,
+        "Pneumonia": pneumonia_prob
 
-    "Pneumonia": pneumonia_prob
+    }
 
-}
+    st.bar_chart(chart_data)
 
-st.bar_chart(chart_data)
+
 
 # -----------------------------
 # About Prediction
