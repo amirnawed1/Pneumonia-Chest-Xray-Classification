@@ -168,6 +168,10 @@ if uploaded_file is not None:
 
     prediction = model.predict(img)
 
+    st.success("Prediction completed")
+
+    st.write(prediction)
+
     predicted_class = np.argmax(
         prediction
     )
